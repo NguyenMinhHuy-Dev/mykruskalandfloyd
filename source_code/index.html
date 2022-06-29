@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,500;0,600;0,900;1,100&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js" integrity="sha512-NxocnqsXP3zm0Xb42zqVMvjQIktKEpTIbCXXyhBPxqGZHqhcOXHs4pXI/GoZ8lE+2NJONRifuBpi9DxC58L0Lw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <title>Kruskal and Floyd</title>
+</head>
+<body>
+    <script src="./js/Edge.js"></script>
+    <script src="./js/Vertex.js"></script>
+    <script src="./js/Graph.js"></script>
+    <script src="./js/index.js"></script>
+
+    <button id="button-view">KẾT QUẢ CHI TIẾT</button>
+
+    <div class="modal" id="modal"> 
+        <div class="modal-overlay" id="modal-overlay"></div>
+
+        <div class="modal-body">
+            <div class="modal-title">
+                <span>KẾT QUẢ</span>
+            </div>
+            <div class="modal-content">
+                <span id="content-header">
+                    
+                </span>
+                <ul id="content-list">
+                    
+                </ul>
+            </div>
+            <div class="modal-bottom">
+                <button id="button-close">ĐÓNG</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="alert" id="alert" onclick="this.style.left='-520px'">
+        <span class="closebtn" onclick="this.parentElement.style.left='-520px'">&times;</span> 
+        <strong id="alert-content"></strong>
+    </div>
+
+    <div class="alert" id="floyd" onclick="this.style.left='-560px'">
+        <span class="closebtn" onclick="this.parentElement.style.left='-560px'">&times;</span> 
+        <strong id="floyd-content">CÀI ĐẶT THUẬT TOÁN FLOYD THÀNH CÔNG</strong>
+    </div>
+
+    <div class="maxtrix">
+        
+    </div>
+
+    <div class="controller">
+        <div class="Logo">
+            <span id="Logo1">Kruskal & Floyd</span>
+            <span id="Logo2">Kruskal & Floyd</span>
+        </div>
+    </div> 
+
+    <script>
+        $(document).ready(function() {
+            $('#button-view').click(function() {
+                document.getElementById('modal').classList.add('active');
+            })
+            $('#modal-overlay').click(function() {
+                document.getElementById('modal').classList.remove('active');
+            })
+            $('#button-close').click(function() {
+                document.getElementById('modal').classList.remove('active');
+            })
+        });
+    </script>
+</body>
+</html>
